@@ -1,0 +1,24 @@
+version: 2
+
+sources:
+  - name: source
+    schema: source
+    tables:
+      - name: patients
+      - name: encounters
+      - name: conditions
+      - name: medications
+      - name: procedures
+      - name: observations
+      - name: immunizations
+      - name: allergies
+      - name: careplans
+      - name: imaging_studies
+      - name: claims
+      - name: claims_transactions
+      - name: devices
+      - name: supplies
+      - name: organizations
+      - name: providers
+      - name: payers
+      - name: payer_transitions
