@@ -16,5 +16,5 @@ SELECT
     "TOTAL_CLAIM_COST" ::double     as  TOTAL_CLAIM_COST,
     "PAYER_COVERAGE"::double        as  PAYER_COVERAGE,
     "REASONCODE"                    as  REASON_CODE,
-    "REASONDESCRIPTION"               as   REASON_DESCRIPTION
+    "REASONDESCRIPTION"             as   REASON_DESCRIPTION
 from {{source('source','encounters')}}
