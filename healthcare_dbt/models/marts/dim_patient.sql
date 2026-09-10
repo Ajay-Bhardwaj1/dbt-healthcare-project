@@ -28,7 +28,11 @@ select
     HEALTHCARE_EXPENSES,
     HEALTHCARE_COVERAGE,
     IS_DECEASED,
-    PSA_LOADED_AT as VALID_FROM,
+    case
+        when row_number() over (partition by PATIENT_ID order by PSA_LOADED_AT) = 1
+        then cast('1900-01-01' as timestamp)
+        else PSA_LOADED_AT
+    end as VALID_FROM,
     coalesce(
         lead(PSA_LOADED_AT) over (partition by PATIENT_ID order by PSA_LOADED_AT),
         cast('9999-12-31' as timestamp)

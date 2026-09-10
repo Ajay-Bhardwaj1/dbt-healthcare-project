@@ -1,0 +1,78 @@
+version: 2
+
+models:
+  - name: dim_patient
+    columns:
+      - name: PATIENT_KEY
+        tests:
+          - unique
+          - not_null
+      - name: PATIENT_ID
+        tests:
+          - not_null
+
+  - name: dim_provider
+    columns:
+      - name: PROVIDER_KEY
+        tests:
+          - unique
+          - not_null
+      - name: PROVIDER_ID
+        tests:
+          - not_null
+
+  - name: dim_organization
+    columns:
+      - name: ORGANIZATION_KEY
+        tests:
+          - unique
+          - not_null
+      - name: ORGANIZATION_ID
+        tests:
+          - not_null
+
+  - name: dim_payer
+    columns:
+      - name: PAYER_KEY
+        tests:
+          - unique
+          - not_null
+      - name: PAYER_ID
+        tests:
+          - not_null
+
+  - name: fact_encounter
+    columns:
+      - name: ENCOUNTER_ID
+        tests:
+          - not_null
+      - name: PATIENT_KEY
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_patient')
+              field: PATIENT_KEY
+
+  - name: fact_condition
+    columns:
+      - name: PATIENT_KEY
+        tests:
+          - relationships:
+              to: ref('dim_patient')
+              field: PATIENT_KEY
+
+  - name: fact_medication
+    columns:
+      - name: PATIENT_KEY
+        tests:
+          - relationships:
+              to: ref('dim_patient')
+              field: PATIENT_KEY
+
+  - name: fact_procedure
+    columns:
+      - name: PATIENT_KEY
+        tests:
+          - relationships:
+              to: ref('dim_patient')
+              field: PATIENT_KEY

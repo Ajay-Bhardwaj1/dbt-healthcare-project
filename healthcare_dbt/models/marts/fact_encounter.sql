@@ -20,17 +20,17 @@ select
 from {{ ref('psa_encounters') }} e
 left join {{ ref('dim_patient') }} dp
     on e.PATIENT_ID = dp.PATIENT_ID
-    and e.START_DATE >= dp.VALID_FROM
-    and e.START_DATE < dp.VALID_TO
+    and e.START_DATE >= cast(dp.VALID_FROM as date)
+    and e.START_DATE < cast(dp.VALID_TO as date)
 left join {{ ref('dim_provider') }} dpr
     on e.PROVIDER_ID = dpr.PROVIDER_ID
-    and e.START_DATE >= dpr.VALID_FROM
-    and e.START_DATE < dpr.VALID_TO
+    and e.START_DATE >= cast(dpr.VALID_FROM as date)
+    and e.START_DATE < cast(dpr.VALID_TO as date)
 left join {{ ref('dim_organization') }} do_
     on e.ORGANIZATION_ID = do_.ORGANIZATION_ID
-    and e.START_DATE >= do_.VALID_FROM
-    and e.START_DATE < do_.VALID_TO
+    and e.START_DATE >= cast(do_.VALID_FROM as date)
+    and e.START_DATE < cast(do_.VALID_TO as date)
 left join {{ ref('dim_payer') }} dpy
     on e.PAYER_ID = dpy.PAYER_ID
-    and e.START_DATE >= dpy.VALID_FROM
-    and e.START_DATE < dpy.VALID_TO
+    and e.START_DATE >= cast(dpy.VALID_FROM as date)
+    and e.START_DATE < cast(dpy.VALID_TO as date)
