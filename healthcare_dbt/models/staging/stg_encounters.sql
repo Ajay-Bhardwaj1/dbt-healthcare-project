@@ -5,7 +5,7 @@ SELECT
     "Id"                            as ENCOUNTER_ID,
     "START"::date                   as START_DATE,
     "STOP"::date                    as END_DATE,
-    'PATIENT'                       as PATIENT_ID,
+    "PATIENT"                       as PATIENT_ID,
     "ORGANIZATION"                  as ORGANIZATION_ID,
     "PROVIDER"                      as PROVIDER_ID,
     "PAYER"                         as  PAYER_ID,
