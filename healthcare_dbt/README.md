@@ -241,7 +241,7 @@ dbt-healthcare/
 
 ```bash
 # 1️⃣  Clone
-git clone https://github.com/<your-username>/dbt-healthcare.git
+git clone https://---------.git
 cd dbt-healthcare
 
 # 2️⃣  Virtual Environment
