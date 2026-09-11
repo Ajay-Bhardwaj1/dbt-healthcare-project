@@ -294,7 +294,7 @@ dbt docs serve
 ---
 
 <p align="center">
-  <b>Built by</b> <a href="https://github.com/YOUR_USERNAME">Your Name</a> · <a href="https://linkedin.com/in/YOUR_LINKEDIN">LinkedIn</a>
+  <b>Built by</b> <a href="https://github.com/Ajay-Bhardwaj1">Ajay Kumar</a> · <a href="https://www.linkedin.com/in/ajay-kumar-26252019b/">LinkedIn</a>
 </p>
 
 
